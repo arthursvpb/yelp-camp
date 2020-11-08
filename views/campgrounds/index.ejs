@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+<div class="container-fluid">
+  <div class="row">
+    <% campgrounds.forEach(camp => { %>
+    <div class="col-12 col-sm-6 col-md-4 text-center">
+      <div class="card">
+        <img class="card-img-top" src="<%= camp.image %>" />
+        <div class="card-body">
+          <h5 class="card-title"><%= camp.name %></h5>
+          <!-- The ID is stored in camp._id -->
+          <a href="/campgrounds/<%= camp._id %>" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+<% include ../partials/footer %>
